@@ -1,0 +1,13 @@
+name: 'Run Tests'
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+jobs:
+  run-tests:
+      uses: retrain-ai/common-workflows/.github/workflows/python-poetry-run-tests.yml@main
+      secrets: inherit
+      with:
+        min-coverage: 0.8
+        python-version: <<PYTHON_VERSION>>
